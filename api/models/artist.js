@@ -1,6 +1,7 @@
 "use strict";
 
-var Mongoose = require('mongoose')
+var Promise = require('bluebird')
+  , Mongoose = Promise.promisifyAll(require('mongoose'))
   , Moment = require('moment')
   , Schema = Mongoose.Schema
   , ObjectId = Schema.Types.ObjectId;
@@ -18,4 +19,4 @@ var schema = new Schema({
 
 });
 
-module.exports = Mongoose.model('Artist', schema);
+module.exports = Promise.promisifyAll(Mongoose.model('Artist', schema));
