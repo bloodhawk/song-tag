@@ -7,5 +7,6 @@ var controllers = RequireDirectory(module, '../api/controllers');
 module.exports = function (app) {
 
   app.use('/v1', controllers.artists);
+  app.use('/v1', controllers.songs);
 
 };
